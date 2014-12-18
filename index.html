@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="autocv">
+   <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1"/>
+      <meta name="X-UA-Compatible" content="IE=edge"/>
+      <meta name="author" content="Arturo 'Wolfchamane' Martinez"/>
+      <meta name="copyright" content="from:2000" />
+      <meta name="description" content=""/>
+      <meta name="keywords" content=""/>
+      <meta name="robots" content="noindex, nofollow"/>
+      <title>AUTO CV: {{person.personal_info.name.firstName}} {{person.personal_info.name.lastName}}</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+      <link rel="stylesheet" href="./styles/autoCVStyle.css"/>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+      <script src="./scripts/autoCVApp.js"></script>
+   </head>
+   <body>
+      <nav id="top" class="navbar navbar-default" role="navigator" ng-controller="NavController">
+         <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse"
+                       data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+               <a href="#" class="navbar-brand">   
+                  <span>{{person.personal_info.name.treatment}}</span>
+                  <span>{{person.personal_info.name.firstName}}</span>
+                  <span>{{person.personal_info.name.lastName}}</span>
+               </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+               <ul class="nav navbar-nav">
+                  <li>
+                     <a>
+                        <label for="gotoSection">Section:</label>
+                        <select id="gotoSection"></select>
+                     </a>
+                  </li>
+                  <li ng-click="printMe()">
+                     <a>
+                        <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+                        <span>Print</span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <div class="container">
+         <auto-cv></auto-cv>
+      </div>
+   </body>
+</html>

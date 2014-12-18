@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* default: 320px width | mobiles */
+@media all{
+   section{border:.1em dotted #ccc;margin:.5em 0;}
+   section legend{float:right;font-size:1em;width:auto;border:0;}
+   section legend div{width:auto;float:left;margin:0 .25em;}
+   section legend span{display:inline-block;}
+   section legend span.square{width:14px;height:14px;margin:0;}
+   section legend span:last-child{margin-top:-.3em;}
+   H2,H3,H4{margin-top:0;text-transform:capitalize;padding:.25em;}
+   H2{background:linear-gradient(0deg, #111, #aaa);color:#fff;}
+   H2 i{float:right;cursor:pointer;font-size:.5em !important;}
+   H4{margin-bottom:0;}
+   .data{list-style:none;margin:.5em 0;padding:0;width:100%;height:auto;overflow:hidden;}
+   .data.job{background-color:#ffe0a9;}
+   .data.job.old{background-color:#ededed;}
+   .data li{width:100%;overflow:hidden;text-indent:.5em;}
+   .data li:last-child{margin-bottom:.25em;}
+   .data li div{float:left;margin-right:1%;}
+   .data li div:last-child{margin-right:0;}
+   .dataLabel,.dataInput,.linkMe{width:99%;clear:both;}
+   .dataLabel{font-weight:600;text-transform:capitalize;}
+   .dataLabel:after{content:':\00a0';}
+   .newLine{clear:both;float:left;}
+   .return{text-align:right;padding-right:.5em;}
+   .fa-html5{}
+   .fa-android{color:#A4C639;}
+   .fa-html5{color:#EC6231;}
+   .fa-wordpress{color:#1e8cbe;}
+}
+
+/* computer screens and landscape tablets */
+@media screen and (min-width:1024px){
+   .dataLabel{width:15%;}
+   .dataInput,.linkMe{width:84%;clear:none;}
+}
+
+/* printable */
+@media print{
+   section{border:0;}
+   section H2{border-bottom:.1em solid #ccc;}
+   section H2 i{visibility:hidden;}
+   section .sectionBody legend{display:none;}
+   .return{display:none;}
+}

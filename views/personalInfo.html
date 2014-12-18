@@ -1,0 +1,193 @@
+<section id="personalInfo">
+   <h2>personal info</h2>
+   <div class="sectionBody">
+      <ul class="data">
+         <li>
+            <div class="dataLabel">name</div>
+            <div class="dataInput">
+               {{person.personal_info.name.treatment}} 
+               {{person.personal_info.name.firstName}} 
+               {{person.personal_info.name.midName}} 
+               {{person.personal_info.name.lastName}}
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">date of birth</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{person.personal_info.dateOfBirth.mm}}</span>
+               <span class="toOrderNumber">{{person.personal_info.dateOfBirth.dd}}</span>,
+               {{person.personal_info.dateOfBirth.ccyy}}
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">driving license</div>
+            <div class="dataInput">
+               <span class="newLine">Type: {{person.personal_info.drivingLicense.type}}</span>
+               <span class="newLine">Valid at: {{person.personal_info.drivingLicense.region}}</span>
+               <span class="newLine">{{person.personal_info.drivingLicense.ownCar?"Owns personal vehicle":"No personal vehicle"}}</span>
+            </div>
+         </li>
+      </ul>
+   </div>
+</section>
+
+<section id="academicBackground">
+   <h2>academic background</h2>
+   <div class="sectionBody">
+      <ul class="data" ng-repeat="degree in person.academic_background.degrees">
+         <h3>{{degree.title}}</h3>
+         <li>
+            <div class="dataLabel">institution</div>
+            <div class="dataInput">
+               <span class="newLine">{{degree.institution.name}}</span>
+               <span class="newLine">
+                  {{degree.institution.location.city}},
+                  {{degree.institution.location.county}},
+                  {{degree.institution.location.country}}
+               </span>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">type</div>
+            <div class="dataInput">{{degree.type}}</div>
+         </li>
+         <li>
+            <div class="dataLabel">from</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{degree.dateOfStart.mm}}</span>
+               {{degree.dateOfStart.ccyy}}
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">to</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{degree.dateOfEnd.mm}}</span>
+               <span class="isEstimated">{{degree.dateOfEnd.ccyy}}</span>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">mark</div>
+            <div class="dataInput">{{degree.mark}}</div>
+         </li>
+         <li>
+            <div class="dataLabel">subjects</div>
+            <div class="dataInput">
+               <div class="newLine" ng-repeat="year in degree.years">
+                  <h4><span class="toOrderNumber">{{year.ord}}</span> year</h4>
+                  <span class="newLine" ng-repeat="subject in year.subjects">{{subject}}</span>
+               </div>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">internship</div>
+            <div class="dataInput">
+               <a href="{{degree.internship.ref}}">{{degree.internship.text}}</a>
+            </div>
+         </li>
+      </ul>
+   </div>
+</section>
+
+<section id="languages">
+   <h2>languages</h2>
+   <div class="sectionBody">
+      <ul class="data" ng-repeat="language in person.languages">
+         <li>
+            <div class="dataLabel">{{language.name}}</div>
+            <div class="dataInput">
+               <div class="newLine">Level: {{language.level}}</div>
+               <div class="newLine" ng-show="language.certificates.length > 0">
+                  <span ng-repeat="certificate in language.certificates">Certificate in {{certificate.level}} by {{certificate.institution}} in {{certificate.year}}</span>
+               </div>
+         </li>
+      </ul>
+   </div>
+</section>
+
+<section id="otherCourses">
+   <h2>other courses</h2>
+   <div class="sectionBody">
+      <ul class="data" ng-repeat="course in person.other_courses">
+         <h3>{{course.title}}</h3>
+         <li>
+            <div class="dataLabel">institution</div>
+            <div class="dataInput">{{course.institution}}</div>
+         </li>
+         <li>
+            <div class="dataLabel">date of start</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{course.dateOfStart.mm}}</span>
+               <span>{{course.dateOfStart.ccyy}}</span>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">date of end</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{course.dateOfEnd.mm}}</span>
+               <span class="isEstimated">{{course.dateOfEnd.ccyy}}</span>
+            </div>
+         </li>
+      </ul>
+   </div>
+</section>
+
+<section id="career">
+   <h2>career</h2>
+   <div class="sectionBody">
+      <legend>
+         <div>
+            <span class="square data job"></span>
+            <span>Current position</span>
+         </div>
+         <div>
+            <span class="square data job old"></span>
+            <span>Old position</span>
+         </div>
+      </legend>
+      <ul class="data job" ng-class="{'old':job.dateOfEnd}" ng-repeat="job in person.career">
+         <a name="{{job.ref}}"/>
+         <h4>{{job.name}}</h4>
+         <li>
+            <div class="dataLabel">company location</div>
+            <div class="dataInput">
+               <span>{{job.location.city}}</span>,
+               <span>{{job.location.county}}</span>,
+               <span>{{job.location.country}}</span>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">date of start</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{job.dateOfStart.mm}}</span>
+               <span>{{job.dateOfStart.ccyy}}</span>
+            </div>
+         </li>
+         <li ng-show="{{job.dateOfEnd}}">
+            <div class="dataLabel">date of end</div>
+            <div class="dataInput">
+               <span class="toMonthName">{{job.dateOfEnd.mm}}</span>
+               <span class="isEstimated">{{job.dateOfEnd.ccyy}}</span>
+            </div>
+         </li>
+         <li>
+            <div class="dataLabel">role</div>
+            <div class="dataInput">{{job.job}}</div>
+         </li>
+      </ul>
+   </div>
+</section>
+
+<section id="portfolio">
+   <h2>portfolio</h2>
+   <div class="sectionBody">
+      <ul class="data">
+         <li ng-repeat="project in person.portfolio">
+            <div class="dataLabel">
+               <i class="fa fa-{{project.type}}"></i>
+               <span>{{project.name}}</span>
+            </div>
+            <div class="linkMe">{{project.ref}}</div>
+         </li>
+      </ul>
+   </div>
+</section>
