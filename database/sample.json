@@ -1,0 +1,154 @@
+{
+   "personal_info":{
+      "name":{
+         "treatment":"Mr.",
+         "firstName":"First",
+         "midName":"M.",
+         "lastName":"Last Name"
+      },
+      "dateOfBirth":{
+         "ccyy":1900,
+         "mm":1,
+         "dd":1
+      },
+      "drivingLicense":{
+         "type":"A type",
+         "region":"Somewhere",
+         "ownCar":false
+      }
+   },
+   "academic_background":{
+      "degrees":[
+         {
+            "title":"1st Degree Title",
+            "type":"Degree Type",
+            "institution":{
+               "name":"Institution Name",
+               "location":{
+                  "city":"City",
+                  "county":"County",
+                  "country":"Country"
+               }
+            },
+            "dateOfStart":{
+               "ccyy":1900,
+               "mm":1
+            },
+            "dateOfEnd":{
+               "ccyy":1900,
+               "mm":1
+            },
+            "mark":"Your score",
+            "years":[
+               {
+                  "ord":1,
+                  "subjects":[
+                     "A subject",
+                     "Another subject",
+                     "Other subject"
+                  ]
+               },
+               {
+                  "ord":2,
+                  "subjects":[
+                     "A subject",
+                     "Another subject",
+                     "Other subject"
+                  ]
+               }
+            ],
+            "internship":{
+               "text":"Where?"
+            }
+         }
+      ]
+   },
+   "languages":[
+      {
+         "name":"A language",
+         "level":"Level",
+         "certificates":[
+            {
+               "year":1900,
+               "institution":"(Where?)",
+               "level":"(Certificate Level)"
+            }
+         ]
+      }
+   ],
+   "other_courses":[
+      {
+         "title":"Current Course Ongoing Name",
+         "institution":"Institution",
+         "dateOfStart":{
+            "ccyy":2014,
+            "mm":1
+         },
+         "dateOfEnd":{
+            "ccyy":2018,
+            "mm":4
+         }
+      },
+      {
+         "title":"Finished Course Name",
+         "institution":"Institution",
+         "dateOfStart":{
+            "ccyy":1900,
+            "mm":1
+         },
+         "dateOfEnd":{
+            "ccyy":1900,
+            "mm":4
+         }
+      }
+   ],
+   "career":[
+      {
+         "name":"Current Employer",
+         "location":{
+            "city":"City",
+            "county":"County?",
+            "country":"Country"
+         },
+         "dateOfStart":{
+            "ccyy":2013,
+            "mm":1            
+         },
+         "job":"A job"
+      },
+      {
+         "name":"Former employer",
+         "location":{
+            "city":"City",
+            "county":"County?",
+            "country":"Country"
+         },
+         "dateOfStart":{
+            "ccyy":1900,
+            "mm":8            
+         },
+         "dateOfEnd":{
+            "ccyy":1901,
+            "mm":2
+         },
+         "job":"A job"
+      }
+   ],
+   "portfolio":[
+      {
+         "type":"html5",
+         "name":"Website name",
+         "ref":"http://website"
+      },
+      {
+         "type":"wordpress",
+         "name":"Blog name",
+         "ref":"http://website"
+      },
+      {
+         "type":"android",
+         "name":"Android Project",
+         "ref":"http://website"
+      }
+   ]
+}
